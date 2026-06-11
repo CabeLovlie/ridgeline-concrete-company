@@ -13,7 +13,7 @@ import ContactForm from '../components/ContactForm.astro';
       loading="eager"
     />
     <div class="page-hero__overlay"></div>
-    <div class="page-hero__content">
+    <div class="page-hero__content contact-hero__content">
       <h1 class="page-hero__title">GET A FREE QUOTE</h1>
       <p class="page-hero__subhead">
         Tell Cameron about your project. Most bids turned around within 24 hours.
@@ -22,7 +22,8 @@ import ContactForm from '../components/ContactForm.astro';
   </section>
 
   <section class="contact-page fade-up">
-    <div class="container contact-page__grid">
+    <div class="contact-page__wrapper">
+      <div class="contact-page__grid">
       <div class="contact-page__form">
         <ContactForm />
       </div>
@@ -37,19 +38,31 @@ import ContactForm from '../components/ContactForm.astro';
         </p>
         <p class="contact-page__hours">Cameron typically responds same day.</p>
         <img
-          src="/images/rupp-construction-team02.jpg"
-          alt="Rupp Construction branded work truck with bulldog logo"
+          src="/images/rupp-construction-logo-large.jpg"
+          alt="Rupp Construction & Concrete LLC"
+          class="w-full max-w-xs mx-auto block"
+          style="border-radius: 4px;"
           loading="lazy"
-          class="contact-page__photo"
         />
+      </div>
       </div>
     </div>
   </section>
 </Base>
 
 <style>
+  .contact-hero__content {
+    text-align: center;
+  }
+
   .contact-page {
     padding: 4rem 0;
+  }
+
+  .contact-page__wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
   }
 
   .contact-page__grid {
@@ -101,17 +114,10 @@ import ContactForm from '../components/ContactForm.astro';
     margin: 0 0 2rem;
   }
 
-  .contact-page__photo {
-    width: 100%;
-    max-width: 300px;
-    aspect-ratio: 4 / 3;
-    object-fit: cover;
-    border-radius: 4px;
-  }
-
   @media (min-width: 768px) {
     .contact-page__grid {
       grid-template-columns: 1fr 1fr;
+      gap: 64px;
     }
   }
 </style>

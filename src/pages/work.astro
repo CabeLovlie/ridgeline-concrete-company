@@ -3,6 +3,7 @@ import Base from '../layouts/Base.astro';
 
 const galleries = [
   {
+    id: 'stamped',
     title: 'Stamped Concrete',
     photos: [
       { src: '/images/rupp-construction-stamped-concrete01.jpg', alt: 'Slate ashlar stamped concrete close-up in dark blue-gray' },
@@ -12,6 +13,7 @@ const galleries = [
     ],
   },
   {
+    id: 'driveways',
     title: 'Driveways',
     photos: [
       { src: '/images/rupp-construction-drone03.jpg', alt: 'Finished residential driveway overhead view' },
@@ -20,15 +22,17 @@ const galleries = [
     ],
   },
   {
+    id: 'patios',
     title: 'Patios & Flatwork',
     photos: [
       { src: '/images/rupp-construction-patio-after01.jpg', alt: 'Finished patio elevated angle against blue house' },
-      { src: '/images/rupp-construction-patio-complete01.jpg', alt: 'Finished sunny concrete back patio' },
+      { src: '/images/rupp-construction-patio-after02.jpg', alt: 'Finished concrete back patio' },
       { src: '/images/rupp-construction-patio-complete02.jpg', alt: 'Exposed aggregate patio in suburban backyard' },
       { src: '/images/rupp-construction-drone02.jpg', alt: 'Large residential slab overhead with concrete truck' },
     ],
   },
   {
+    id: 'foundations',
     title: 'Foundations',
     photos: [
       { src: '/images/rupp-construction-foundation-complete01.jpg', alt: 'Aerial view of stem wall perimeter foundation' },
@@ -38,6 +42,25 @@ const galleries = [
     ],
   },
   {
+    id: 'sidewalks',
+    title: 'Sidewalks & Pathways',
+    photos: [
+      { src: '/images/rupp-construction-driveway-after01.jpg', alt: 'Fresh smooth concrete walkway and driveway after completion' },
+      { src: '/images/rupp-construction-driveway-work01.jpg', alt: 'Residential walkway concrete work in progress' },
+      { src: '/images/rupp-construction-driveway-work02.jpg', alt: 'Front porch and walkway concrete pour' },
+    ],
+  },
+  {
+    id: 'repair',
+    title: 'Concrete Repair',
+    photos: [
+      { src: '/images/rupp-construction-driveway-before02.jpg', alt: 'Cracked and heaved driveway before replacement' },
+      { src: '/images/rupp-construction-patio-before01.jpg', alt: 'Overgrown backyard before patio installation' },
+      { src: '/images/rupp-construction-driveway-before01.jpg', alt: 'Damaged concrete surface before repair' },
+    ],
+  },
+  {
+    id: 'commercial',
     title: 'Commercial Work',
     photos: [
       { src: '/images/rupp-construction-drone04.jpg', alt: 'Commercial building concrete apron with street visible' },
@@ -67,7 +90,7 @@ const galleries = [
 
   <div class="work-page">
     {galleries.map((gallery) => (
-      <section class="gallery-section fade-up">
+      <section id={gallery.id} class="gallery-section fade-up">
         <div class="container">
           <h2 class="gallery-section__title">{gallery.title}</h2>
           <div class="gallery-grid">
@@ -90,6 +113,7 @@ const galleries = [
 
   .gallery-section {
     margin-bottom: 3.5rem;
+    scroll-margin-top: 101px;
   }
 
   .gallery-section__title {

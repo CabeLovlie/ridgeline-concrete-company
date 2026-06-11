@@ -29,7 +29,8 @@ import { ChevronDown } from '@lucide/astro';
 <style>
   .hero {
     position: relative;
-    min-height: 100vh;
+    height: calc(100vh - 101px);
+    min-height: 500px;
     display: flex;
     align-items: center;
     margin-top: 101px;
@@ -93,7 +94,7 @@ import { ChevronDown } from '@lucide/astro';
 
   .hero__scroll {
     position: absolute;
-    bottom: 2rem;
+    bottom: 24px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 1;

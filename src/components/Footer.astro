@@ -1,4 +1,6 @@
 ---
+import { Instagram, Facebook } from '@lucide/astro';
+
 const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/services', label: 'Services' },
@@ -60,6 +62,26 @@ const cities = [
       <p class="footer__cities">
         Serving {cities.join(' · ')}
       </p>
+      <div class="footer__social">
+        <a
+          href="https://www.instagram.com/ruppconstructionandconcrete/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Rupp Construction on Instagram"
+          class="footer__social-link"
+        >
+          <Instagram size={20} />
+        </a>
+        <a
+          href="https://www.facebook.com/ruppconstructionandconcretellc/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Rupp Construction on Facebook"
+          class="footer__social-link"
+        >
+          <Facebook size={20} />
+        </a>
+      </div>
     </div>
   </div>
 
@@ -164,6 +186,21 @@ const cities = [
     color: var(--color-text-muted);
     margin: 1rem 0 0;
     line-height: 1.6;
+  }
+
+  .footer__social {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .footer__social-link {
+    color: var(--color-text-muted);
+    transition: color 200ms ease;
+  }
+
+  .footer__social-link:hover {
+    color: var(--color-accent);
   }
 
   .footer__bar {

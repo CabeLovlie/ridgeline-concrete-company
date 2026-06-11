@@ -40,8 +40,17 @@ const cities = [
         {' '}— if we can get there, we'll quote it.
       </p>
 
-      <div class="map-placeholder" role="img" aria-label="Map placeholder for Enumclaw, WA and surroundings">
-        <p>Map · Enumclaw, WA and surroundings</p>
+      <div class="map-embed">
+        <iframe
+          src="https://maps.google.com/maps?q=544+Victor+St,+Enumclaw,+WA+98022&t=&z=13&ie=UTF8&iwloc=&output=embed"
+          width="100%"
+          height="400"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Rupp Construction & Concrete LLC location map"
+        ></iframe>
       </div>
     </div>
   </section>
@@ -79,21 +88,18 @@ const cities = [
     line-height: 1.6;
   }
 
-  .map-placeholder {
+  .map-embed {
     height: 400px;
-    background-color: var(--color-surface);
     border: 1px solid var(--color-border);
     border-radius: 4px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    overflow: hidden;
+    filter: grayscale(100%) invert(90%) contrast(85%);
   }
 
-  .map-placeholder p {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 14px;
-    color: var(--color-text-muted);
-    margin: 0;
+  .map-embed iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
   }
 
   @media (min-width: 640px) {

@@ -5,6 +5,7 @@ interface Service {
   title: string;
   description: string;
   icon: 'Truck' | 'Grid' | 'Layers' | 'Building2' | 'Home' | 'Hammer';
+  href: string;
 }
 
 interface Props {
@@ -18,31 +19,37 @@ const services: Service[] = [
     title: 'Driveways',
     description: 'Full replacement and new pours. Rebar-reinforced for lasting results.',
     icon: 'Truck',
+    href: '/work#driveways',
   },
   {
     title: 'Patios & Outdoor Slabs',
     description: 'Flat finish, exposed aggregate, or stamped. Any size.',
     icon: 'Grid',
+    href: '/work#patios',
   },
   {
     title: 'Stamped Concrete',
     description: 'Wood grain, slate, ashlar — decorative concrete that outperforms wood.',
     icon: 'Layers',
+    href: '/work#stamped',
   },
   {
     title: 'Foundations & Slabs',
     description: 'Shop floors, ADU foundations, stem walls, and garage slabs.',
     icon: 'Building2',
+    href: '/work#foundations',
   },
   {
     title: 'Sidewalks & Pathways',
     description: 'Residential walkways, front porches, steps, and curbing.',
     icon: 'Home',
+    href: '/work#sidewalks',
   },
   {
     title: 'Concrete Repair',
     description: 'Cracked or sunken sections replaced. Old concrete demo and haul-off included.',
     icon: 'Hammer',
+    href: '/work#repair',
   },
 ];
 
@@ -62,13 +69,13 @@ const icons = { Truck, Grid, Layers, Building2, Home, Hammer };
       {services.map((service) => {
         const Icon = icons[service.icon];
         return (
-          <div class="service-card">
+          <a href={service.href} class="service-card">
             <div class="service-card__icon">
               <Icon size={24} color="#e85d04" />
             </div>
             <h3 class="service-card__title">{service.title}</h3>
             <p class="service-card__desc">{service.description}</p>
-          </div>
+          </a>
         );
       })}
     </div>
@@ -95,9 +102,17 @@ const icons = { Truck, Grid, Layers, Building2, Home, Hammer };
   }
 
   .service-card {
+    display: block;
     background-color: var(--color-surface);
-    border-left: 2px solid var(--color-accent);
+    border-left: 2px solid #4a4a4a;
     padding: 24px;
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.2s ease;
+  }
+
+  .service-card:hover {
+    border-left-color: var(--color-accent);
   }
 
   .service-card__icon {
@@ -110,6 +125,18 @@ const icons = { Truck, Grid, Layers, Building2, Home, Hammer };
     letter-spacing: 0.02em;
     margin: 0 0 0.5rem;
     color: var(--color-text);
+  }
+
+  .service-card__title::after {
+    content: '';
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+
+  .service-card:hover .service-card__title::after {
+    content: ' →';
+    opacity: 1;
+    color: var(--color-accent);
   }
 
   .service-card__desc {
