@@ -1,0 +1,121 @@
+---
+
+---
+
+<section class="process-section fade-up">
+  <img
+    src="/images/rupp-construction-team03.jpg"
+    alt=""
+    aria-hidden="true"
+    class="process-section__bg"
+    loading="lazy"
+  />
+
+  <div class="container">
+    <div class="speed-lines speed-lines--wide">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <h2 class="section-heading">HOW IT WORKS</h2>
+
+    <div class="process-steps">
+      <div class="process-step">
+        <span class="process-step__number" aria-hidden="true">01</span>
+        <h3 class="process-step__title">Free Quote</h3>
+        <p class="process-step__desc">
+          Cameron comes out, walks the job, and gives you a detailed bid. No pressure, no surprises.
+        </p>
+      </div>
+      <div class="process-step">
+        <span class="process-step__number" aria-hidden="true">02</span>
+        <h3 class="process-step__title">Prep & Demo</h3>
+        <p class="process-step__desc">
+          Existing concrete removed and hauled. Ground graded and compacted. Rebar grid or wire mesh installed.
+        </p>
+      </div>
+      <div class="process-step">
+        <span class="process-step__number" aria-hidden="true">03</span>
+        <h3 class="process-step__title">The Pour</h3>
+        <p class="process-step__desc">
+          Concrete placed, screeded, and finished by an experienced crew. Forms stay until cured.
+        </p>
+      </div>
+      <div class="process-step">
+        <span class="process-step__number" aria-hidden="true">04</span>
+        <h3 class="process-step__title">Final Walkthrough</h3>
+        <p class="process-step__desc">
+          Cameron reviews the finished product with you before calling it done. Any punch items addressed same week.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .process-section {
+    position: relative;
+    padding: 5rem 0;
+    background-color: var(--color-bg);
+    overflow: hidden;
+  }
+
+  .process-section__bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.08;
+    pointer-events: none;
+  }
+
+  .process-section .container {
+    position: relative;
+    z-index: 1;
+  }
+
+  .process-steps {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    margin-top: 2.5rem;
+  }
+
+  .process-step {
+    position: relative;
+    padding-left: 0;
+  }
+
+  .process-step__number {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 64px;
+    line-height: 1;
+    color: var(--color-border);
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .process-step__title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 0.02em;
+    margin: 0 0 0.5rem;
+    color: var(--color-text);
+  }
+
+  .process-step__desc {
+    font-size: 14px;
+    color: var(--color-text-muted);
+    margin: 0;
+    line-height: 1.6;
+    max-width: 280px;
+  }
+
+  @media (min-width: 768px) {
+    .process-steps {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+  }
+</style>

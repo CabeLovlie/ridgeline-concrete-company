@@ -1,0 +1,149 @@
+---
+
+---
+
+<section class="stamped-section fade-up">
+  <img
+    src="/images/rupp-construction-stamped-concrete04.jpg"
+    alt=""
+    aria-hidden="true"
+    class="stamped-section__bg"
+    loading="lazy"
+  />
+  <div class="stamped-section__overlay"></div>
+
+  <div class="container stamped-section__content">
+    <p class="stamped-section__eyebrow">DECORATIVE CONCRETE</p>
+    <h2 class="stamped-section__title">CONCRETE THAT LOOKS LIKE WOOD.</h2>
+    <p class="stamped-section__body">
+      Stamped concrete gives you the look of wood or stone with none of the maintenance.
+      Cameron's crew works in wood grain, slate, and ashlar patterns — finished with color
+      hardener and sealer for a surface that lasts decades.
+    </p>
+
+    <div class="stamped-section__thumbs">
+      <img
+        src="/images/rupp-construction-stamped-concrete01.jpg"
+        alt="Slate ashlar stamped concrete close-up in dark blue-gray"
+        loading="lazy"
+        class="stamped-section__thumb"
+      />
+      <img
+        src="/images/rupp-construction-stamped-concrete02.jpg"
+        alt="Wood-grain stamped concrete patio wide angle with house"
+        loading="lazy"
+        class="stamped-section__thumb"
+      />
+      <img
+        src="/images/rupp-construction-stamped-concrete03.jpg"
+        alt="Wood-grain stamped concrete patio with steps"
+        loading="lazy"
+        class="stamped-section__thumb"
+      />
+    </div>
+
+    <a href="/work" class="text-link stamped-section__cta">See More Stamped Work →</a>
+  </div>
+</section>
+
+<style>
+  .stamped-section {
+    position: relative;
+    padding: 6rem 0;
+    overflow: hidden;
+  }
+
+  .stamped-section__bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .stamped-section__overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.82);
+  }
+
+  .stamped-section__content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+  }
+
+  .stamped-section__eyebrow {
+    font-size: 12px;
+    color: var(--color-accent);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin: 0 0 1rem;
+    font-weight: 500;
+  }
+
+  .stamped-section__title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 48px;
+    letter-spacing: 0.02em;
+    line-height: 1;
+    margin: 0 0 1.5rem;
+    color: var(--color-text);
+  }
+
+  .stamped-section__body {
+    max-width: 640px;
+    margin: 0 auto 2.5rem;
+    font-size: 16px;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+  }
+
+  .stamped-section__thumbs {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    align-items: center;
+  }
+
+  .stamped-section__thumb {
+    width: 100%;
+    max-width: 360px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 4px;
+    transition: transform 300ms ease;
+  }
+
+  .stamped-section__thumb:hover {
+    transform: scale(1.03);
+  }
+
+  .stamped-section__cta {
+    font-size: 15px;
+  }
+
+  @media (min-width: 768px) {
+    .stamped-section__title {
+      font-size: 48px;
+    }
+
+    .stamped-section__thumbs {
+      flex-direction: row;
+      justify-content: center;
+    }
+
+    .stamped-section__thumb {
+      flex: 1;
+      max-width: none;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .stamped-section__thumb:hover {
+      transform: none;
+    }
+  }
+</style>

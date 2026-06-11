@@ -1,0 +1,230 @@
+---
+import Base from '../layouts/Base.astro';
+import CredentialBar from '../components/CredentialBar.astro';
+import HeroHome from '../components/HeroHome.astro';
+import ServiceGrid from '../components/ServiceGrid.astro';
+import BeforeAfter from '../components/BeforeAfter.astro';
+import StampedSection from '../components/StampedSection.astro';
+import ReviewsStrip from '../components/ReviewsStrip.astro';
+import ProcessSection from '../components/ProcessSection.astro';
+
+const reviews = [
+  {
+    text: 'Professional, organized, and efficient. Cameron Rupp is all those things and he is also cost competitive — his was the low bid. Made it look like an art form.',
+    author: 'TM T',
+  },
+  {
+    text: 'Invoice matched the original bid to the cent. He came back with a timely bid, explained step by step the process, and then made it happen, exceeding our expectations.',
+    author: 'Richard Newman',
+  },
+  {
+    text: 'Always on time and on schedule with an outstanding work ethic. If you are looking for quality craftsmanship with a company you can trust, look no further.',
+    author: 'Eva Wiseman',
+  },
+];
+---
+
+<Base>
+  <CredentialBar />
+  <HeroHome />
+
+  <section id="stats" class="stats-bar fade-up">
+    <div class="stats-bar__inner">
+      <div class="stat">
+        <span class="stat__number">52</span>
+        <span class="stat__label">Five-Star Reviews</span>
+      </div>
+      <div class="stat__divider"></div>
+      <div class="stat">
+        <span class="stat__number">4+</span>
+        <span class="stat__label">Years Serving South King County</span>
+      </div>
+      <div class="stat__divider"></div>
+      <div class="stat">
+        <span class="stat__number">10+</span>
+        <span class="stat__label">Cities Served</span>
+      </div>
+    </div>
+  </section>
+
+  <ServiceGrid />
+
+  <section class="before-after-section fade-up">
+    <div class="container">
+      <div class="speed-lines speed-lines--wide">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <h2 class="section-heading">BEFORE & AFTER</h2>
+      <BeforeAfter
+        beforeSrc="/images/rupp-construction-driveway-before02.jpg"
+        afterSrc="/images/rupp-construction-driveway-after01.jpg"
+        beforeAlt="Cracked and heaved residential driveway before replacement"
+        afterAlt="Fresh smooth reinforced concrete driveway after completion with American flag"
+        caption="Cracked, heaved driveway → fresh reinforced concrete. One week start to finish."
+      />
+    </div>
+  </section>
+
+  <StampedSection />
+
+  <section class="before-after-section fade-up">
+    <div class="container">
+      <BeforeAfter
+        beforeSrc="/images/rupp-construction-patio-before01.jpg"
+        afterSrc="/images/rupp-construction-patio-complete01.jpg"
+        beforeAlt="Overgrown weedy backyard with no hardscape before patio installation"
+        afterAlt="Finished sunny concrete back patio ready for furniture"
+        caption="Weedy backyard → clean concrete patio. Ready for furniture the same week."
+      />
+    </div>
+  </section>
+
+  <ReviewsStrip reviews={reviews} />
+
+  <ProcessSection />
+
+  <section class="cta-banner fade-up">
+    <div class="container cta-banner__inner">
+      <h2 class="cta-banner__title">READY TO GET STARTED?</h2>
+      <p class="cta-banner__subtext">
+        Call or message Cameron directly. Most jobs quoted within 24 hours.
+      </p>
+      <div class="cta-banner__ctas">
+        <a href="tel:+12063966282" class="cta-banner__btn cta-banner__btn--dark">Call (206) 396-6282</a>
+        <a href="/contact" class="cta-banner__btn cta-banner__btn--outline">Send a Message</a>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .stats-bar {
+    background-color: var(--color-surface);
+    padding: 3rem 1.5rem;
+  }
+
+  .stats-bar__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .stat {
+    text-align: center;
+    flex: 1;
+  }
+
+  .stat__number {
+    display: block;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 56px;
+    color: var(--color-accent);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+
+  .stat__label {
+    display: block;
+    font-size: 13px;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .stat__divider {
+    display: none;
+  }
+
+  .before-after-section {
+    padding: 5rem 0;
+    background-color: var(--color-bg);
+  }
+
+  .before-after-section .section-heading {
+    margin-bottom: 2rem;
+  }
+
+  .cta-banner {
+    background-color: var(--color-accent);
+    padding: 4rem 1.5rem;
+  }
+
+  .cta-banner__inner {
+    text-align: center;
+  }
+
+  .cta-banner__title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 48px;
+    letter-spacing: 0.02em;
+    color: var(--color-bg);
+    margin: 0 0 1rem;
+    line-height: 1;
+  }
+
+  .cta-banner__subtext {
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.7);
+    margin: 0 0 2rem;
+  }
+
+  .cta-banner__ctas {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .cta-banner__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
+    padding: 0 24px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    border-radius: 4px;
+    transition: opacity 200ms ease;
+  }
+
+  .cta-banner__btn:hover {
+    opacity: 0.9;
+  }
+
+  .cta-banner__btn--dark {
+    background-color: var(--color-bg);
+    color: #fff;
+  }
+
+  .cta-banner__btn--outline {
+    background-color: transparent;
+    color: var(--color-bg);
+    border: 2px solid var(--color-bg);
+  }
+
+  @media (min-width: 768px) {
+    .stats-bar__inner {
+      flex-direction: row;
+      justify-content: center;
+    }
+
+    .stat__divider {
+      display: block;
+      width: 1px;
+      height: 60px;
+      background-color: var(--color-border);
+      flex-shrink: 0;
+    }
+
+    .cta-banner__ctas {
+      flex-direction: row;
+      justify-content: center;
+    }
+  }
+</style>

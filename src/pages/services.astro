@@ -1,0 +1,224 @@
+---
+import Base from '../layouts/Base.astro';
+
+const services = [
+  {
+    id: 'driveways',
+    title: 'Driveways',
+    photo: '/images/rupp-construction-drone03.jpg',
+    photoAlt: 'Clean finished residential driveway overhead view',
+    description:
+      "A cracked, heaved driveway isn't just an eyesore — it's a liability. Cameron's crew demo and hauls the old slab, preps a compacted gravel base, installs rebar or wire mesh for reinforcement, and finishes the new concrete to your spec: broom finish, exposed aggregate, or smooth. Most residential driveways completed in under a week.",
+    bullets: [
+      'Full demo & haul-off',
+      'Rebar-reinforced pours',
+      'Broom, smooth, or aggregate finish',
+      'Expansion joints properly placed',
+      'Competitive flat-rate bids',
+    ],
+    imageRight: true,
+  },
+  {
+    id: 'patios',
+    title: 'Patios & Outdoor Slabs',
+    photo: '/images/rupp-construction-patio-after01.jpg',
+    photoAlt: 'Finished concrete patio at elevated angle against blue house',
+    description:
+      'A concrete patio is the highest-ROI backyard improvement you can make. No rot, no splinters, no annual staining. Cameron sizes and designs the slab to your space, handles the prep and pour, and delivers a finished patio ready for furniture.',
+    bullets: [
+      'Any shape or size',
+      'Sand, broom, or aggregate finish',
+      'Steps and transitions included',
+      'Reinforced for PNW freeze-thaw cycles',
+      'Patio + driveway combos available',
+    ],
+    imageRight: false,
+  },
+  {
+    id: 'stamped',
+    title: 'Stamped Concrete',
+    photo: '/images/rupp-construction-stamped-concrete03.jpg',
+    photoAlt: 'Wood-grain stamped concrete patio with steps in context',
+    description:
+      'Stamped concrete delivers the look of wood planks, slate tile, or stone pavers at a fraction of the cost — with none of the long-term maintenance. Cameron works in multiple patterns and color hardener combinations. Every stamped job is sealed on completion.',
+    bullets: [
+      'Wood grain, slate, and ashlar patterns',
+      'Color hardener integral to slab',
+      'Sealer applied on completion',
+      'Steps and borders matched',
+      'Patios, entries, and pool surrounds',
+    ],
+    imageRight: true,
+  },
+  {
+    id: 'foundations',
+    title: 'Foundations & Shop Slabs',
+    photo: '/images/rupp-construction-foundation-complete02.jpg',
+    photoAlt: 'Large shop foundation freshly poured with Pacific Northwest trees',
+    description:
+      'Cameron builds the foundation your shop, ADU, or garage addition deserves. Full stem wall and floor slab packages, coordinated with your framing schedule. Drone documentation standard on large jobs.',
+    bullets: [
+      'Stem wall + floor slab packages',
+      'Shop and ADU foundations',
+      'Garage slab replacements',
+      'Rebar per structural spec',
+      'Coordination with general contractors',
+    ],
+    imageRight: false,
+  },
+  {
+    id: 'sidewalks',
+    title: 'Sidewalks & Pathways',
+    photo: '/images/rupp-construction-driveway-after01.jpg',
+    photoAlt: 'Fresh smooth concrete driveway and walkway after completion',
+    description:
+      'Sunken, cracking sidewalks are a safety hazard. Cameron replaces residential walkways, front porches, steps, and curbing — often matching the existing aggregate or finish for a seamless look.',
+    bullets: [
+      'Front walks and entries',
+      'Porch replacement',
+      'Steps with proper riser height',
+      'Curbing and edging',
+      'Aggregate matching available',
+    ],
+    imageRight: true,
+  },
+  {
+    id: 'repair',
+    title: 'Concrete Repair & Replacement',
+    photo: '/images/rupp-construction-patio-complete02.jpg',
+    photoAlt: 'Exposed aggregate patio in suburban backyard',
+    description:
+      'Not every job is a full replacement. Cameron repairs isolated cracked sections, patches settled areas, and handles the demolition and disposal when replacement is the right call. Honest assessment on every bid.',
+    bullets: [
+      'Crack repair and patching',
+      'Settled slab replacement',
+      'Demo and haul-off',
+      'Honest scope assessment',
+      'Referral to specialists when needed',
+    ],
+    imageRight: false,
+  },
+];
+---
+
+<Base title="Our Services | Rupp Construction & Concrete LLC">
+  <section class="page-hero" style="height: 50vh; margin-top: 61px;">
+    <img
+      src="/images/rupp-construction-foundation-complete02.jpg"
+      alt=""
+      aria-hidden="true"
+      class="page-hero__bg"
+      loading="eager"
+    />
+    <div class="page-hero__overlay"></div>
+    <div class="page-hero__content">
+      <h1 class="page-hero__title">OUR SERVICES</h1>
+      <p class="page-hero__subhead">
+        Residential and commercial concrete work across South King County and the greater Puget Sound.
+      </p>
+    </div>
+  </section>
+
+  <div class="services-page">
+    {services.map((service) => (
+      <section id={service.id} class="service-detail fade-up">
+        <div class="container service-detail__inner">
+          <div class:list={['service-detail__text', { 'service-detail__text--right': !service.imageRight }]}>
+            <h2 class="service-detail__title">{service.title}</h2>
+            <p class="service-detail__desc">{service.description}</p>
+            <ul class="service-detail__bullets">
+              {service.bullets.map((bullet) => (
+                <li>{bullet}</li>
+              ))}
+            </ul>
+          </div>
+          <div class:list={['service-detail__image', { 'service-detail__image--left': !service.imageRight }]}>
+            <img src={service.photo} alt={service.photoAlt} loading="lazy" />
+          </div>
+        </div>
+      </section>
+    ))}
+  </div>
+</Base>
+
+<style>
+  .services-page {
+    padding-bottom: 4rem;
+  }
+
+  .service-detail {
+    padding: 4rem 0;
+    background-color: var(--color-bg);
+  }
+
+  .service-detail:nth-child(even) {
+    background-color: var(--color-surface);
+  }
+
+  .service-detail__inner {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    align-items: center;
+  }
+
+  .service-detail__title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 42px;
+    letter-spacing: 0.02em;
+    margin: 0 0 1.25rem;
+    color: var(--color-text);
+  }
+
+  .service-detail__desc {
+    font-size: 16px;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+    margin: 0 0 1.5rem;
+  }
+
+  .service-detail__bullets {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .service-detail__bullets li {
+    font-size: 15px;
+    color: var(--color-text);
+    padding-left: 1.25rem;
+    position: relative;
+  }
+
+  .service-detail__bullets li::before {
+    content: '·';
+    position: absolute;
+    left: 0;
+    color: var(--color-accent);
+    font-weight: bold;
+  }
+
+  .service-detail__image img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+
+  @media (min-width: 768px) {
+    .service-detail__inner {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .service-detail__text--right {
+      order: 2;
+    }
+
+    .service-detail__image--left {
+      order: 1;
+    }
+  }
+</style>

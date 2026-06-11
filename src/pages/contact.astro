@@ -1,0 +1,117 @@
+---
+import Base from '../layouts/Base.astro';
+import ContactForm from '../components/ContactForm.astro';
+---
+
+<Base title="Get a Free Quote | Rupp Construction & Concrete LLC">
+  <section class="page-hero" style="height: 35vh; margin-top: 61px;">
+    <img
+      src="/images/rupp-construction-team03.jpg"
+      alt=""
+      aria-hidden="true"
+      class="page-hero__bg"
+      loading="eager"
+    />
+    <div class="page-hero__overlay"></div>
+    <div class="page-hero__content">
+      <h1 class="page-hero__title">GET A FREE QUOTE</h1>
+      <p class="page-hero__subhead">
+        Tell Cameron about your project. Most bids turned around within 24 hours.
+      </p>
+    </div>
+  </section>
+
+  <section class="contact-page fade-up">
+    <div class="container contact-page__grid">
+      <div class="contact-page__form">
+        <ContactForm />
+      </div>
+
+      <div class="contact-page__info">
+        <h2 class="contact-page__heading">Prefer to call?</h2>
+        <a href="tel:+12063966282" class="contact-page__phone">(206) 396-6282</a>
+        <p class="contact-page__email">
+          <a href="mailto:ruppconstructionandconcrete@gmail.com">
+            ruppconstructionandconcrete@gmail.com
+          </a>
+        </p>
+        <p class="contact-page__hours">Cameron typically responds same day.</p>
+        <img
+          src="/images/rupp-construction-team02.jpg"
+          alt="Rupp Construction branded work truck with bulldog logo"
+          loading="lazy"
+          class="contact-page__photo"
+        />
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .contact-page {
+    padding: 4rem 0;
+  }
+
+  .contact-page__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .contact-page__heading {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px;
+    letter-spacing: 0.02em;
+    margin: 0 0 1rem;
+    color: var(--color-text);
+  }
+
+  .contact-page__phone {
+    display: block;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 48px;
+    color: var(--color-accent);
+    margin-bottom: 1rem;
+    transition: color 200ms ease;
+    line-height: 1;
+  }
+
+  .contact-page__phone:hover {
+    color: var(--color-accent-dim);
+  }
+
+  .contact-page__email {
+    margin: 0 0 1rem;
+    font-size: 14px;
+  }
+
+  .contact-page__email a {
+    color: var(--color-text-muted);
+    transition: color 200ms ease;
+  }
+
+  .contact-page__email a:hover {
+    color: var(--color-accent);
+  }
+
+  .contact-page__hours {
+    font-size: 14px;
+    color: var(--color-text-muted);
+    margin: 0 0 2rem;
+  }
+
+  .contact-page__photo {
+    width: 100%;
+    max-width: 300px;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+
+  @media (min-width: 768px) {
+    .contact-page__grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+</style>

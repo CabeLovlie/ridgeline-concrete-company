@@ -1,0 +1,142 @@
+---
+import Base from '../layouts/Base.astro';
+
+const galleries = [
+  {
+    title: 'Stamped Concrete',
+    photos: [
+      { src: '/images/rupp-construction-stamped-concrete01.jpg', alt: 'Slate ashlar stamped concrete close-up in dark blue-gray' },
+      { src: '/images/rupp-construction-stamped-concrete02.jpg', alt: 'Wood-grain stamped concrete patio wide angle with house' },
+      { src: '/images/rupp-construction-stamped-concrete03.jpg', alt: 'Wood-grain stamped concrete patio with steps' },
+      { src: '/images/rupp-construction-stamped-concrete04.jpg', alt: 'Extreme close-up wood grain stamped concrete texture' },
+    ],
+  },
+  {
+    title: 'Driveways',
+    photos: [
+      { src: '/images/rupp-construction-drone03.jpg', alt: 'Finished residential driveway overhead view' },
+      { src: '/images/rupp-construction-driveway-after01.jpg', alt: 'Fresh smooth concrete driveway after replacement' },
+      { src: '/images/rupp-construction-driveway-complete02.jpg', alt: 'Completed driveway with teal house and traffic cones' },
+    ],
+  },
+  {
+    title: 'Patios & Flatwork',
+    photos: [
+      { src: '/images/rupp-construction-patio-after01.jpg', alt: 'Finished patio elevated angle against blue house' },
+      { src: '/images/rupp-construction-patio-complete01.jpg', alt: 'Finished sunny concrete back patio' },
+      { src: '/images/rupp-construction-patio-complete02.jpg', alt: 'Exposed aggregate patio in suburban backyard' },
+      { src: '/images/rupp-construction-drone02.jpg', alt: 'Large residential slab overhead with concrete truck' },
+    ],
+  },
+  {
+    title: 'Foundations',
+    photos: [
+      { src: '/images/rupp-construction-foundation-complete01.jpg', alt: 'Aerial view of stem wall perimeter foundation' },
+      { src: '/images/rupp-construction-foundation-complete02.jpg', alt: 'Large shop foundation freshly poured' },
+      { src: '/images/rupp-construction-foundation-progress01.jpg', alt: 'Aerial view of foundation forms set' },
+      { src: '/images/rupp-construction-foundation-progress03.jpg', alt: 'Ground-level fresh foundation pour with caution tape' },
+    ],
+  },
+  {
+    title: 'Commercial Work',
+    photos: [
+      { src: '/images/rupp-construction-drone04.jpg', alt: 'Commercial building concrete apron with street visible' },
+      { src: '/images/rupp-construction-drone05.jpg', alt: 'Overhead commercial concrete job at tighter angle' },
+    ],
+  },
+];
+---
+
+<Base title="Our Work | Rupp Construction & Concrete LLC">
+  <section class="page-hero" style="height: 40vh; margin-top: 61px;">
+    <img
+      src="/images/rupp-construction-stamped-concrete04.jpg"
+      alt=""
+      aria-hidden="true"
+      class="page-hero__bg"
+      loading="eager"
+    />
+    <div class="page-hero__overlay"></div>
+    <div class="page-hero__content">
+      <h1 class="page-hero__title">OUR WORK</h1>
+      <p class="page-hero__subhead">
+        A sample of projects across South King County — driveways, patios, foundations, and stamped concrete.
+      </p>
+    </div>
+  </section>
+
+  <div class="work-page">
+    {galleries.map((gallery) => (
+      <section class="gallery-section fade-up">
+        <div class="container">
+          <h2 class="gallery-section__title">{gallery.title}</h2>
+          <div class="gallery-grid">
+            {gallery.photos.map((photo) => (
+              <div class="gallery-item">
+                <img src={photo.src} alt={photo.alt} loading="lazy" />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    ))}
+  </div>
+</Base>
+
+<style>
+  .work-page {
+    padding: 3rem 0 4rem;
+  }
+
+  .gallery-section {
+    margin-bottom: 3.5rem;
+  }
+
+  .gallery-section__title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px;
+    letter-spacing: 0.02em;
+    margin: 0 0 1.5rem;
+    color: var(--color-text);
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .gallery-item {
+    overflow: hidden;
+    border-radius: 4px;
+  }
+
+  .gallery-item img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    transition: filter 300ms ease;
+  }
+
+  .gallery-item:hover img {
+    filter: brightness(1.1);
+  }
+
+  @media (min-width: 640px) {
+    .gallery-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .gallery-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .gallery-item:hover img {
+      filter: none;
+    }
+  }
+</style>

@@ -1,0 +1,187 @@
+---
+const navLinks = [
+  { href: '/', label: 'Home' },
+  { href: '/services', label: 'Services' },
+  { href: '/work', label: 'Our Work' },
+  { href: '/about', label: 'About' },
+  { href: '/service-area', label: 'Service Area' },
+  { href: '/contact', label: 'Contact' },
+];
+
+const cities = [
+  'Enumclaw', 'Auburn', 'Federal Way', 'Renton', 'Kent',
+  'Maple Valley', 'Covington', 'Bonney Lake', 'Sumner', 'Buckley',
+];
+---
+
+<footer class="footer">
+  <div class="footer__speed-lines">
+    <div class="speed-lines speed-lines--footer">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+  <div class="container footer__grid">
+    <div class="footer__col">
+      <img
+        src="/images/rupp-construction-logo01.jpg"
+        alt="Rupp Construction & Concrete LLC"
+        class="footer__logo"
+        width="56"
+        height="56"
+        loading="lazy"
+      />
+      <p class="footer__tagline">Built right. Every pour.</p>
+    </div>
+
+    <div class="footer__col">
+      <h3 class="footer__heading">Quick Links</h3>
+      <ul class="footer__links">
+        {navLinks.map((link) => (
+          <li>
+            <a href={link.href} class="footer__link">{link.label}</a>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <div class="footer__col">
+      <h3 class="footer__heading">Contact</h3>
+      <p class="footer__contact-item">
+        <a href="tel:+12063966282" class="footer__phone">(206) 396-6282</a>
+      </p>
+      <p class="footer__contact-item">
+        <a href="mailto:ruppconstructionandconcrete@gmail.com" class="footer__email">
+          ruppconstructionandconcrete@gmail.com
+        </a>
+      </p>
+      <p class="footer__cities">
+        Serving {cities.join(' · ')}
+      </p>
+    </div>
+  </div>
+
+  <div class="footer__bar">
+    <p>
+      © 2025 Rupp Construction & Concrete LLC · Enumclaw, WA · License RUPPCCC799L2
+    </p>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background-color: #111111;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .footer__speed-lines {
+    border-top: 1px solid var(--color-border);
+    padding: 0 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .footer__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  .footer__logo {
+    height: 56px;
+    width: auto;
+    margin-bottom: 1rem;
+  }
+
+  .footer__tagline {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    letter-spacing: 0.05em;
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+
+  .footer__heading {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    letter-spacing: 0.05em;
+    margin: 0 0 1rem;
+    color: var(--color-text);
+  }
+
+  .footer__links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .footer__link {
+    font-size: 14px;
+    color: var(--color-text-muted);
+    transition: color 200ms ease;
+  }
+
+  .footer__link:hover {
+    color: var(--color-accent);
+  }
+
+  .footer__contact-item {
+    margin: 0 0 0.5rem;
+    font-size: 14px;
+  }
+
+  .footer__phone {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px;
+    color: var(--color-accent);
+    transition: color 200ms ease;
+  }
+
+  .footer__phone:hover {
+    color: var(--color-accent-dim);
+  }
+
+  .footer__email {
+    color: var(--color-text-muted);
+    font-size: 13px;
+    transition: color 200ms ease;
+  }
+
+  .footer__email:hover {
+    color: var(--color-accent);
+  }
+
+  .footer__cities {
+    font-size: 12px;
+    color: var(--color-text-muted);
+    margin: 1rem 0 0;
+    line-height: 1.6;
+  }
+
+  .footer__bar {
+    border-top: 1px solid var(--color-border);
+    padding: 1.25rem 1.5rem;
+    text-align: center;
+  }
+
+  .footer__bar p {
+    margin: 0;
+    font-size: 12px;
+    color: var(--color-text-muted);
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  @media (min-width: 768px) {
+    .footer__grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+</style>

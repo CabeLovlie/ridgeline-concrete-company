@@ -1,0 +1,103 @@
+---
+interface Review {
+  text: string;
+  author: string;
+}
+
+interface Props {
+  reviews: Review[];
+}
+
+const { reviews } = Astro.props;
+---
+
+<section class="reviews-section fade-up">
+  <div class="container">
+    <div class="speed-lines speed-lines--wide">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <h2 class="section-heading">WHAT CUSTOMERS SAY</h2>
+    <p class="reviews-section__badge">★★★★★ 52 REVIEWS ON GOOGLE</p>
+
+    <div class="reviews-grid">
+      {reviews.map((review) => (
+        <article class="review-card">
+          <p class="review-card__stars" aria-label="5 out of 5 stars">★★★★★</p>
+          <blockquote class="review-card__text">"{review.text}"</blockquote>
+          <p class="review-card__author">— {review.author}</p>
+        </article>
+      ))}
+    </div>
+
+    <p class="reviews-section__link">
+      <a href="#" target="_blank" rel="noopener noreferrer" class="text-link">
+        Read all 52 reviews on Google →
+      </a>
+    </p>
+  </div>
+</section>
+
+<style>
+  .reviews-section {
+    padding: 5rem 0;
+    background-color: var(--color-surface);
+  }
+
+  .reviews-section__badge {
+    font-size: 13px;
+    color: var(--color-accent);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin: 0.75rem 0 2.5rem;
+    font-weight: 500;
+  }
+
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .review-card {
+    background-color: var(--color-surface-2);
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    padding: 24px;
+  }
+
+  .review-card__stars {
+    color: var(--color-accent);
+    font-size: 16px;
+    margin: 0 0 1rem;
+    letter-spacing: 2px;
+  }
+
+  .review-card__text {
+    font-size: 15px;
+    font-style: italic;
+    color: var(--color-text);
+    margin: 0 0 1.25rem;
+    line-height: 1.6;
+  }
+
+  .review-card__author {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+
+  .reviews-section__link {
+    margin: 2.5rem 0 0;
+    text-align: center;
+    font-size: 15px;
+  }
+
+  @media (min-width: 768px) {
+    .reviews-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+</style>

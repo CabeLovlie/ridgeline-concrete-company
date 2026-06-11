@@ -1,0 +1,110 @@
+---
+import Base from '../layouts/Base.astro';
+
+const cities = [
+  'Auburn', 'Enumclaw', 'Federal Way', 'Renton', 'Kent',
+  'Maple Valley', 'Covington', 'Bonney Lake', 'Sumner', 'Buckley',
+  'Black Diamond', 'Puyallup', 'Tacoma',
+];
+---
+
+<Base title="Service Area | Rupp Construction & Concrete LLC">
+  <section class="page-hero" style="height: 40vh; margin-top: 61px;">
+    <img
+      src="/images/rupp-construction-drone04.jpg"
+      alt=""
+      aria-hidden="true"
+      class="page-hero__bg"
+      loading="eager"
+    />
+    <div class="page-hero__overlay"></div>
+    <div class="page-hero__content">
+      <h1 class="page-hero__title">SERVICE AREA</h1>
+      <p class="page-hero__subhead">
+        Based in Enumclaw. Serving South King County, Pierce County, and the greater Puget Sound.
+      </p>
+    </div>
+  </section>
+
+  <section class="service-area-page fade-up">
+    <div class="container">
+      <div class="city-grid">
+        {cities.map((city) => (
+          <span class="city-badge">{city}</span>
+        ))}
+      </div>
+
+      <p class="service-area-note">
+        Not sure if we serve your area? Call Cameron at{' '}
+        <a href="tel:+12063966282" class="text-link">(206) 396-6282</a>
+        {' '}— if we can get there, we'll quote it.
+      </p>
+
+      <div class="map-placeholder" role="img" aria-label="Map placeholder for Enumclaw, WA and surroundings">
+        <p>Map · Enumclaw, WA and surroundings</p>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .service-area-page {
+    padding: 4rem 0;
+  }
+
+  .city-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .city-badge {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    padding: 12px 20px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    letter-spacing: 0.05em;
+    text-align: center;
+    border-radius: 4px;
+    color: var(--color-text);
+  }
+
+  .service-area-note {
+    font-size: 15px;
+    color: var(--color-text-muted);
+    text-align: center;
+    margin: 0 0 2.5rem;
+    line-height: 1.6;
+  }
+
+  .map-placeholder {
+    height: 400px;
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .map-placeholder p {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+
+  @media (min-width: 640px) {
+    .city-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .city-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+</style>
