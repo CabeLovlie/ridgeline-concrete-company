@@ -1,6 +1,4 @@
 ---
-import { Instagram, Facebook } from '@lucide/astro';
-
 const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/services', label: 'Services' },
@@ -56,26 +54,6 @@ const cities = [
       <p class="footer__cities">
         Serving {cities.join(' · ')}
       </p>
-      <div class="footer__social">
-        <a
-          href="https://www.instagram.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Ridgeline Concrete Co. on Instagram"
-          class="footer__social-link"
-        >
-          <Instagram size={20} />
-        </a>
-        <a
-          href="https://www.facebook.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Ridgeline Concrete Co. on Facebook"
-          class="footer__social-link"
-        >
-          <Facebook size={20} />
-        </a>
-      </div>
     </div>
   </div>
 
@@ -84,7 +62,7 @@ const cities = [
       Portfolio demo by Cabriel Lovlie Web Design. Ridgeline Concrete Co. is a fictional contractor brand created to showcase website design, layout, and conversion strategy. It does not represent an active business.
     </p>
     <p>
-      © 2026 Ridgeline Concrete Co. · South King County, WA
+      © 2026 Cabriel Lovlie Web Design · Portfolio Demo
     </p>
   </div>
 </footer>
@@ -173,21 +151,6 @@ const cities = [
     color: var(--color-text-muted);
     margin: 1rem 0 0;
     line-height: 1.6;
-  }
-
-  .footer__social {
-    display: flex;
-    gap: 1rem;
-    margin-top: 1rem;
-  }
-
-  .footer__social-link {
-    color: var(--color-text-muted);
-    transition: color 200ms ease;
-  }
-
-  .footer__social-link:hover {
-    color: var(--color-accent);
   }
 
   .footer__bar {
