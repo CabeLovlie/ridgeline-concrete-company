@@ -3,7 +3,7 @@ import Base from '../layouts/Base.astro';
 import ContactForm from '../components/ContactForm.astro';
 ---
 
-<Base title="Get a Free Quote | Rupp Construction & Concrete LLC">
+<Base title="Get a Free Quote | Ridgeline Concrete Co.">
   <section class="page-hero" style="height: 35vh; margin-top: 61px;">
     <img
       src="/images/rupp-construction-team03.jpg"
@@ -16,7 +16,7 @@ import ContactForm from '../components/ContactForm.astro';
     <div class="page-hero__content contact-hero__content">
       <h1 class="page-hero__title">GET A FREE QUOTE</h1>
       <p class="page-hero__subhead">
-        Tell Cameron about your project. Most bids turned around within 24 hours.
+        Tell us about your project. Most estimates turned around within 24 hours.
       </p>
     </div>
   </section>
@@ -24,27 +24,22 @@ import ContactForm from '../components/ContactForm.astro';
   <section class="contact-page fade-up">
     <div class="contact-page__wrapper">
       <div class="contact-page__grid">
-      <div class="contact-page__form">
-        <ContactForm />
-      </div>
+        <div class="contact-page__form">
+          <ContactForm />
+        </div>
 
-      <div class="contact-page__info">
-        <h2 class="contact-page__heading">Prefer to call?</h2>
-        <a href="tel:+12063966282" class="contact-page__phone">(206) 396-6282</a>
-        <p class="contact-page__email">
-          <a href="mailto:ruppconstructionandconcrete@gmail.com">
-            ruppconstructionandconcrete@gmail.com
-          </a>
-        </p>
-        <p class="contact-page__hours">Cameron typically responds same day.</p>
-        <img
-          src="/images/rupp-construction-logo-large.jpg"
-          alt="Rupp Construction & Concrete LLC"
-          class="w-full max-w-xs mx-auto block"
-          style="border-radius: 4px;"
-          loading="lazy"
-        />
-      </div>
+        <div class="contact-page__info">
+          <h2 class="contact-page__heading">Prefer to call?</h2>
+          <a href="tel:+12535550148" class="contact-page__phone">(253) 555-0148</a>
+          <p class="contact-page__hours">We typically respond same day.</p>
+          <img
+            src="/images/rupp-construction-team03.jpg"
+            alt="Concrete crew at work"
+            class="w-full max-w-xs mx-auto block"
+            style="border-radius: 4px;"
+            loading="lazy"
+          />
+        </div>
       </div>
     </div>
   </section>
@@ -92,20 +87,6 @@ import ContactForm from '../components/ContactForm.astro';
 
   .contact-page__phone:hover {
     color: var(--color-accent-dim);
-  }
-
-  .contact-page__email {
-    margin: 0 0 1rem;
-    font-size: 14px;
-  }
-
-  .contact-page__email a {
-    color: var(--color-text-muted);
-    transition: color 200ms ease;
-  }
-
-  .contact-page__email a:hover {
-    color: var(--color-accent);
   }
 
   .contact-page__hours {

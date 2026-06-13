@@ -5,11 +5,17 @@ interface Props {
   ogImage?: string;
 }
 
+const siteUrl = 'https://ridgeline-concrete-company.netlify.app';
+const defaultDescription =
+  'A fictional concrete contractor website concept showcasing rugged branding, project photos, before-and-after sections, service structure, and estimate-focused conversion flow.';
+
 const {
-  title = 'Rupp Construction & Concrete LLC | Enumclaw, WA',
-  description = 'Licensed concrete contractor serving Enumclaw, Auburn, Federal Way, Renton, Kent, and greater South King County. Driveways, patios, foundations, stamped concrete. Call Cameron at (206) 396-6282.',
-  ogImage = '/images/rupp-construction-drone03.jpg',
+  title = 'Ridgeline Concrete Co. | Contractor Website Portfolio Demo',
+  description = defaultDescription,
+  ogImage = '/images/ridgeline-logo.png',
 } = Astro.props;
+
+const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
 
 import '../styles/global.css';
 import Nav from '../components/Nav.astro';
@@ -24,10 +30,13 @@ import Footer from '../components/Footer.astro';
     <meta name="description" content={description} />
     <title>{title}</title>
 
+    <link rel="canonical" href={canonicalUrl} />
+
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImage} />
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Ridgeline Concrete Co." />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -36,7 +45,7 @@ import Footer from '../components/Footer.astro';
       rel="stylesheet"
     />
 
-    <link rel="icon" type="image/jpeg" href="/images/rupp-construction-logo01.jpg" />
+    <link rel="icon" type="image/png" href="/images/ridgeline-logo.png" />
   </head>
   <body class="bg-bg text-text font-body">
     <Nav />

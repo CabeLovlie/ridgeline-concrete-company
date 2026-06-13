@@ -18,24 +18,18 @@ const { reviews } = Astro.props;
       <span></span>
       <span></span>
     </div>
-    <h2 class="section-heading">WHAT CUSTOMERS SAY</h2>
-    <p class="reviews-section__badge">★★★★★ 53 REVIEWS ON GOOGLE</p>
+    <h2 class="section-heading">WHAT CUSTOMERS NOTICE</h2>
+    <p class="reviews-section__badge">★★★★★ Sample review layout for a contractor website</p>
 
     <div class="reviews-grid">
       {reviews.map((review) => (
         <article class="review-card">
           <p class="review-card__stars" aria-label="5 out of 5 stars">★★★★★</p>
           <blockquote class="review-card__text">"{review.text}"</blockquote>
-          <p class="review-card__author">— {review.author}</p>
+          <p class="review-card__author">{review.author}</p>
         </article>
       ))}
     </div>
-
-    <p class="reviews-section__link">
-      <a href="#" target="_blank" rel="noopener noreferrer" class="text-link">
-        Read all 53 reviews on Google →
-      </a>
-    </p>
   </div>
 </section>
 
@@ -87,12 +81,6 @@ const { reviews } = Astro.props;
     font-weight: 600;
     color: var(--color-text-muted);
     margin: 0;
-  }
-
-  .reviews-section__link {
-    margin: 2.5rem 0 0;
-    text-align: center;
-    font-size: 15px;
   }
 
   @media (min-width: 768px) {
